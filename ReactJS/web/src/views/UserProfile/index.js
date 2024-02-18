@@ -1,26 +1,20 @@
-import React from 'react';
-import * as S from './styles';
+import React from "react";
+import * as S from "./styles";
 
+/* import UserProfileComp from "../../components/UserProfileComp"; */
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-import UserProfileComp from '../../components/UserProfileComp';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+function UserProfile() {
+  return (
+    <S.Container>
+      <Header />
 
+     {/*  <UserProfileComp /> */}
 
-function UserProfile () {
-
-
-    return (
-
-        <S.Container>
-            <Header />  
-
-            <UserProfileComp />
-
-            <Footer />
-
-        </S.Container>
-    )
+      <Footer />
+    </S.Container>
+  );
 }
 
 export default UserProfile;

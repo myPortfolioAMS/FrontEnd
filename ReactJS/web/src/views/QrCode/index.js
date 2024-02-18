@@ -1,36 +1,20 @@
-import React from 'react';
-import * as S from './styles';
+import React from "react";
+import * as S from "./styles";
 
-
-
-import Header from '../../components/Header';
-import QrCodeView from '../../components/QrCode';
-import Footer from '../../components/Footer';
-
-
-
+import Header from "../../components/Header";
+/* import QrCodeView from "../../components/QrCode"; */
+import Footer from "../../components/Footer";
 
 function QrCode() {
-
   return (
-            <S.Container>
+    <S.Container>
+      <Header />
 
-            <Header />
+   {/*    <QrCodeView /> */}
 
-          
-            <QrCodeView />
-        
-          
-            <Footer />
-    
- 
-  
-            </S.Container>
-
- 
-  
-  )
+      <Footer />
+    </S.Container>
+  );
 }
 
 export default QrCode;
-
