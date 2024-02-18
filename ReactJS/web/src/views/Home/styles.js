@@ -1,0 +1,55 @@
+import styled from 'styled-components';
+
+export const Container = styled.div`
+    width: 100%;
+  
+   
+
+
+
+
+`
+
+export const Login = styled.div`
+
+h3 {
+
+    font-size: 36px;
+
+    font-family: 'Roboto', sans-serif;
+   
+    color: #111111;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 32%;
+}
+
+p {
+
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+   
+    color: #111111;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 47%;
+}
+
+p1 {
+
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+   
+    color: #111111;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 47%;
+}
+
+`
