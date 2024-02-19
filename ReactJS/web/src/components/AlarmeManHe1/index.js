@@ -16,8 +16,6 @@ import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsAc
 
 import manometer_verde from "../../assets/manometer-verde.png";
 
-
-
 function AlarmeManHe1() {
   const [valoresNow, setCilindrosNow] = useState([0]); // armazena valores atuais
   const [valoresHoje_1AM, setCilindrosHoje_1AM] = useState([0]); // armazena dos valores de hoje as 1AM
@@ -43,8 +41,10 @@ function AlarmeManHe1() {
 
   useEffect(() => {
     loadCilindrosHoje_1AM();
+    return () => {
+      console.log(valoresHoje_1AM);
+    };
   }, [valoresHoje_1AM]);
-
 
   // início da função que faz a requisição dos valores de hoje as 6 horas da manhã
   async function loadCilindrosHoje_6AM() {
@@ -62,10 +62,12 @@ function AlarmeManHe1() {
 
   useEffect(() => {
     loadCilindrosHoje_6AM();
+    return () => {
+      console.log(valoresHoje_6AM);
+    };
   }, [valoresHoje_6AM]);
 
-
- // início da função que faz a requisição dos valores de hoje - 60 minutos atrás
+  // início da função que faz a requisição dos valores de hoje - 60 minutos atrás
   async function getlast60min() {
     await api
       .get(
@@ -81,9 +83,12 @@ function AlarmeManHe1() {
 
   useEffect(() => {
     getlast60min();
+    return () => {
+      console.log(last60min);
+    };
   }, [last60min]);
 
-   // início da função que faz a requisição dos valores de hoje - neste momento
+  // início da função que faz a requisição dos valores de hoje - neste momento
 
   async function loadCilindrosNow() {
     await api
@@ -98,11 +103,12 @@ function AlarmeManHe1() {
         console.log(error);
       });
   }
-
   useEffect(() => {
     loadCilindrosNow();
+    return () => {
+      console.log(valoresNow);
+    };
   }, [valoresNow]);
-
 
   // função para retornar o valor do alarme setado para He, cilindro 1,  gravado no banco de dados
   async function loadAlarmesNow() {
@@ -121,9 +127,11 @@ function AlarmeManHe1() {
 
   useEffect(() => {
     loadAlarmesNow();
-  }, [PRESSAO_ALARME_He1_gravado]);
 
-  
+    return () => {
+      console.log(PRESSAO_ALARME_He1_gravado);
+    };
+  }, [PRESSAO_ALARME_He1_gravado]);
 
   return (
     <S.Container>
@@ -153,7 +161,6 @@ function AlarmeManHe1() {
               </span>
             ))}
             <span className="featuredMoneyRate">
-              {" "}
               <NotificationsActiveOutlinedIcon className="featuredIconLogoAlarme" />
             </span>
           </S.FeaturedValueContainer>
